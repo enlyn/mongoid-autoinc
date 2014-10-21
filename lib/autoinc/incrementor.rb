@@ -34,7 +34,8 @@ module Mongoid
         @scope_key = options.fetch(:scope, nil)
         @step = options.fetch(:step, 1)
         @seed = options.fetch(:seed, nil)
-        @collection = ::Mongoid.default_session['auto_increment_counters']
+        # @collection = ::Mongoid.default_session['auto_increment_counters']
+        @collection = ::Mongoid.default_session['autoIncrementCounters']
         create if @seed && !exists?
       end
 
